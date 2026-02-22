@@ -6,7 +6,6 @@
 
 A comprehensive real-time bidding (RTB) simulation and optimization platform that helps advertisers maximize ROI through intelligent bid strategy analysis, budget optimization, and performance forecasting.
 
-![RTB Optimizer Dashboard](docs/images/dashboard-preview.png)
 
 ## 🎯 Problem Statement
 
@@ -90,12 +89,7 @@ rtb-optimizer/
 │   ├── performance.py      # Performance metrics
 │   ├── optimizer.py        # Budget optimization
 │   └── forecaster.py       # Performance forecasting
-├── dashboard/               # React visualization
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── hooks/          # Custom hooks
-│   │   └── utils/          # Utilities
-│   └── public/
+|
 ├── data/                    # Sample datasets
 │   ├── schemas/            # Data schemas
 │   └── samples/            # Sample bid data
@@ -268,15 +262,12 @@ Based on simulation with 100K auctions across multiple strategies:
 - [ ] Attribution modeling
 - [ ] Integration with major DSPs (Google DV360, The Trade Desk)
 
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Inspired by real-world programmatic advertising challenges
 - Built with best practices from leading AdTech companies
@@ -284,9 +275,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Your Name** - [your.email@example.com](mailto:your.email@example.com)
+**Isha Mukherjee** - [ishamukherjee123@gmail.com](mailto:ishamukherjee123@gmail.com)
 
-Project Link: [https://github.com/yourusername/rtb-optimizer](https://github.com/yourusername/rtb-optimizer)
+Project Link: [https://github.com/yourusername/rtb-optimizer](https://github.com/ishamukherjee123/rtb-optimizer)
 
 ---
 
