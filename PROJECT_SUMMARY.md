@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-**RTB Optimizer** is a production-ready Real-Time Bidding intelligence platform that demonstrates deep expertise in adtech, data science, and software engineering. This project solves a real $XX billion problem in digital advertising through intelligent bid optimization.
+**RTB Optimizer** is a production-ready Real-Time Bidding intelligence platform that demonstrates deep expertise in adtech, data science, and stastical analysis. This project solves a real $XX billion problem in digital advertising through intelligent bid optimization.
 
 ## 📊 Business Impact
 
@@ -129,7 +129,7 @@ rtb-optimizer/
   - Daily pacing algorithms
   - Scenario analysis
 
-### 4. Stunning Dashboard
+### 4. Dashboard
 - **Real-time Auction Feed**: Live streaming of bid results
 - **Interactive Charts**: 
   - Area charts for performance trends
@@ -194,24 +194,11 @@ print(f"Win Rate: {stats['win_rate']:.2%}")
 print(f"ROAS: {stats['roas']:.2f}x")
 ```
 
-## 🧪 Testing
-
-Comprehensive test suite with >80% code coverage:
-- Unit tests for all components
-- Integration tests for workflows
-- Performance benchmarks
-- Statistical validation
-
-```bash
-pytest tests/ -v --cov=.
-```
-
 ## 📚 Documentation
 
 - **README.md**: Project overview and quick start
-- **docs/architecture.md**: Detailed system architecture
+- **architecture.md**: Detailed system architecture
 - **data/schemas/**: Data format specifications
-- **CONTRIBUTING.md**: Contribution guidelines
 - **notebooks/**: Interactive analysis examples
 
 ## 🎓 Learning Outcomes
@@ -230,15 +217,8 @@ This project demonstrates expertise in:
    - Machine learning (gradient boosting)
    - Optimization algorithms (linear programming)
 
-3. **Software Engineering**
-   - Clean architecture and SOLID principles
-   - Design patterns (Strategy, Factory, Observer)
-   - Comprehensive testing
-   - Documentation best practices
-
-4. **Full-Stack Development**
+3. **Development**
    - Python backend with type safety
-   - React frontend with modern UI
    - Data visualization
    - Responsive design
 
