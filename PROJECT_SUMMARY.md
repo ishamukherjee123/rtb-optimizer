@@ -41,7 +41,7 @@ Advertisers waste **15-30% of programmatic advertising budgets** ($4.5B+ annuall
    - Budget optimization (linear programming)
    - Automated insight generation
 
-4. **React Dashboard** (`dashboard/`)
+4. ** Dashboard** (`dashboard/`)
    - Real-time auction visualization
    - Interactive performance charts
    - Strategy comparison tools
@@ -55,11 +55,6 @@ Advertisers waste **15-30% of programmatic advertising budgets** ($4.5B+ annuall
 - Scikit-learn, XGBoost for ML
 - Statistical analysis with hypothesis testing
 
-**Frontend:**
-- React 18 with hooks
-- Recharts for data visualization
-- Framer Motion for animations
-- Modern CSS with gradients and glassmorphism
 
 **Data Science:**
 - Monte Carlo simulation
@@ -83,16 +78,12 @@ rtb-optimizer/
 ├── analytics/               # Performance analysis
 │   ├── performance.py      # Metrics & comparison
 │   └── optimizer.py        # Budget optimization
-├── dashboard/               # React visualization
-│   ├── src/components/     # React components
-│   │   ├── Dashboard.jsx   # Main dashboard
-│   │   └── Dashboard.css   # Styling
-│   └── package.json
+├── dashboard/               # visualization
 ├── notebooks/               # Jupyter analysis
 │   └── 01_auction_analysis.ipynb
 ├── tests/                   # Comprehensive test suite
 │   └── test_rtb_optimizer.py
-├── docs/                    # Documentation
+├── Architecture/                    # Documentation
 │   └── architecture.md
 ├── data/schemas/           # Data schemas
 ├── examples/               # Usage examples
@@ -278,9 +269,6 @@ This project demonstrates expertise in:
 - **Documentation**: Comprehensive
 - **Code Quality**: Type hints, docstrings, PEP 8 compliant
 
-## 🤝 Contributing
-
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
@@ -289,35 +277,12 @@ MIT License - see [LICENSE](LICENSE) file
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- GitHub: [@ishamukherjee123](https://github.com/yourusername)
+- Email: ishamukherjee123@gmail.com
 
-## 🙏 Acknowledgments
 
-Built with best practices from:
-- Google DV360 documentation
-- The Trade Desk API specs
-- Academic research on auction theory
-- Industry benchmarks and standards
-
----
 
 **Note**: This is a simulation platform for educational and portfolio purposes. Production deployment would require additional security, compliance, and infrastructure considerations.
-
-## 📸 Screenshots
-
-### Dashboard Overview
-![Dashboard](docs/images/dashboard-preview.png)
-*Real-time auction monitoring with live metrics and visualizations*
-
-### Performance Analysis
-![Analysis](docs/images/performance-analysis.png)
-*Comprehensive strategy comparison and insights*
-
-### Budget Optimization
-![Optimization](docs/images/budget-optimization.png)
-*Intelligent budget allocation across campaigns*
 
 ---
 
