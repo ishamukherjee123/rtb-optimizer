@@ -1,293 +1,221 @@
-# 🎯 RTB Optimizer - Real-Time Bidding Intelligence Platform
+# RTB Optimizer Data Schemas
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![React](https://img.shields.io/badge/react-18.0+-61dafb.svg)](https://reactjs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Bid Request Schema
 
-A comprehensive real-time bidding (RTB) simulation and optimization platform that helps advertisers maximize ROI through intelligent bid strategy analysis, budget optimization, and performance forecasting.
-
-![RTB Optimizer Dashboard](docs/images/dashboard-preview.png)
-
-## 🎯 Problem Statement
-
-Advertisers waste **15-30% of programmatic advertising budgets** due to:
-- Overbidding in low-competition auctions
-- Underbidding in high-value placements  
-- Poor budget pacing and allocation
-- Lack of real-time bid efficiency feedback
-
-**Solution Impact**: This platform enables data-driven bid optimization, potentially saving millions in ad spend while improving campaign performance.
-
-## ✨ Key Features
-
-### 📊 Real-Time Auction Simulation
-- Monte Carlo simulation of programmatic ad auctions
-- Realistic bid landscape modeling based on industry data
-- Support for multiple auction types (First-Price, Second-Price, VCG)
-- Configurable competition levels and market dynamics
-
-### 🧠 Intelligent Bid Strategies
-- **Fixed Bidding**: Baseline constant bid strategy
-- **Dynamic Bidding**: Adjusts based on competition and conversion probability
-- **ML-Powered**: Gradient boosting models for optimal bid prediction
-- **A/B Testing Framework**: Compare strategies head-to-head
-
-### 📈 Advanced Analytics
-- Win rate analysis and bid landscape visualization
-- Cost per acquisition (CPA) tracking
-- Return on ad spend (ROAS) calculations
-- Budget burn rate monitoring and forecasting
-- Statistical significance testing
-
-### 💰 Budget Optimization
-- Linear programming for optimal budget allocation
-- Multi-campaign budget distribution
-- Pacing algorithms to prevent overspend
-- What-if scenario analysis
-
-### 🎨 Interactive Dashboard
-- Real-time auction stream visualization
-- Performance metrics and KPI cards
-- Comparative strategy analysis
-- Exportable reports and insights
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     React Dashboard (Frontend)               │
-│  • Live Auction Feed  • Performance Metrics  • Strategy UI   │
-└────────────────────┬────────────────────────────────────────┘
-                     │ REST API / WebSocket
-┌────────────────────┴────────────────────────────────────────┐
-│                   Core Analytics Engine                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  Auction     │  │  Bid         │  │  Budget      │      │
-│  │  Simulator   │  │  Strategies  │  │  Optimizer   │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-┌────────────────────┴────────────────────────────────────────┐
-│                    Data Layer                                │
-│  • Auction Events  • Bid History  • Performance Metrics     │
-└─────────────────────────────────────────────────────────────┘
+```json
+{
+  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+  "timestamp": "2024-02-22T10:30:00Z",
+  "user": {
+    "user_id": "user_123456",
+    "segments": ["tech_enthusiast", "high_income", "mobile_first"],
+    "behavior_score": 0.75,
+    "demographics": {
+      "age_range": "25-34",
+      "gender": "F"
+    }
+  },
+  "device": {
+    "type": "mobile",
+    "os": "iOS",
+    "browser": "Safari",
+    "ip": "192.168.1.1",
+    "geo_city": "San Francisco",
+    "geo_country": "US"
+  },
+  "impression": {
+    "impression_id": "imp_789012",
+    "format": "display",
+    "width": 300,
+    "height": 250,
+    "position": "above_fold",
+    "viewability_score": 0.85
+  },
+  "floor_price": 0.75,
+  "competition_level": 5,
+  "conversion_probability": 0.025,
+  "estimated_value": 12.50
+}
 ```
 
-## 📁 Project Structure
+## Auction Result Schema
 
-```
-rtb-optimizer/
-├── simulation/              # Auction simulation engine
-│   ├── auction.py          # Core auction logic
-│   ├── bid_request.py      # Bid request generation
-│   └── market.py           # Market dynamics modeling
-├── strategies/              # Bid strategy implementations
-│   ├── base.py             # Abstract strategy interface
-│   ├── fixed.py            # Fixed bid strategy
-│   ├── dynamic.py          # Dynamic bidding
-│   └── ml_strategy.py      # ML-based bidding
-├── analytics/               # Analysis and ML models
-│   ├── performance.py      # Performance metrics
-│   ├── optimizer.py        # Budget optimization
-│   └── forecaster.py       # Performance forecasting
-├── dashboard/               # React visualization
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── hooks/          # Custom hooks
-│   │   └── utils/          # Utilities
-│   └── public/
-├── data/                    # Sample datasets
-│   ├── schemas/            # Data schemas
-│   └── samples/            # Sample bid data
-├── notebooks/               # Jupyter analysis
-│   ├── 01_auction_analysis.ipynb
-│   ├── 02_strategy_comparison.ipynb
-│   └── 03_budget_optimization.ipynb
-├── tests/                   # Test suite
-├── docs/                    # Documentation
-│   ├── architecture.md
-│   ├── algorithms.md
-│   └── api.md
-├── requirements.txt
-├── setup.py
-└── README.md
+```json
+{
+  "request_id": "550e8400-e29b-41d4-a716-446655440000",
+  "winner_bid": 3.50,
+  "winning_price": 3.25,
+  "second_price": 3.25,
+  "did_win": true,
+  "num_competitors": 5,
+  "floor_price": 0.75,
+  "converted": false,
+  "revenue": 0.00,
+  "timestamp": "2024-02-22T10:30:00.123Z"
+}
 ```
 
-## 🚀 Quick Start
+## Performance Metrics Schema
 
-### Prerequisites
-- Python 3.8+
-- Node.js 16+
-- pip and npm
-
-### Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/rtb-optimizer.git
-cd rtb-optimizer
+```json
+{
+  "strategy_name": "Dynamic Bid",
+  "total_auctions": 10000,
+  "wins": 4870,
+  "win_rate": 0.487,
+  "total_spend": 45120.50,
+  "total_revenue": 185093.20,
+  "conversions": 234,
+  "avg_cpa": 15.20,
+  "median_cpa": 14.85,
+  "roas": 4.1,
+  "avg_bid": 3.25,
+  "avg_winning_price": 9.26,
+  "budget_efficiency": 4.1,
+  "cpa_std": 3.45,
+  "win_rate_by_hour": {
+    "0": 0.42,
+    "1": 0.39,
+    "8": 0.51,
+    "12": 0.54,
+    "18": 0.48,
+    "23": 0.43
+  },
+  "spend_by_device": {
+    "desktop": 18500.20,
+    "mobile": 22300.15,
+    "tablet": 3100.10,
+    "ctv": 1220.05
+  }
+}
 ```
 
-2. **Set up Python environment**
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+## Budget Allocation Schema
+
+```json
+{
+  "campaign_id": "camp_001",
+  "allocated_budget": 5000.00,
+  "expected_conversions": 333,
+  "expected_revenue": 20500.00,
+  "expected_roas": 4.1,
+  "allocation_timestamp": "2024-02-22T10:00:00Z"
+}
 ```
 
-3. **Install dashboard dependencies**
-```bash
-cd dashboard
-npm install
+## Campaign Configuration Schema
+
+```json
+{
+  "campaign_id": "camp_001",
+  "name": "Q1 Awareness Campaign",
+  "current_cpa": 15.00,
+  "conversion_rate": 0.022,
+  "avg_order_value": 61.50,
+  "daily_impression_volume": 50000,
+  "min_budget": 100.00,
+  "max_budget": 10000.00,
+  "target_roas": 4.0,
+  "status": "active",
+  "start_date": "2024-01-01",
+  "end_date": "2024-03-31"
+}
 ```
 
-### Running the Platform
+## Strategy Configuration Schema
 
-1. **Start the simulation engine**
-```bash
-python -m simulation.run_simulation --auctions 10000 --strategies all
+```json
+{
+  "strategy_type": "dynamic",
+  "parameters": {
+    "base_bid": 1.50,
+    "max_bid": 12.00,
+    "target_cpa": 15.00,
+    "aggressiveness": 1.2,
+    "learning_rate": 0.1
+  },
+  "constraints": {
+    "max_daily_budget": 5000.00,
+    "target_win_rate": 0.45
+  },
+  "enabled": true
+}
 ```
 
-2. **Launch the dashboard**
-```bash
-cd dashboard
-npm start
+## Field Descriptions
+
+### Device Types
+- `desktop`: Traditional desktop/laptop computers
+- `mobile`: Smartphones
+- `tablet`: Tablet devices
+- `ctv`: Connected TV / Over-the-top devices
+
+### Ad Formats
+- `display`: Banner and display ads
+- `video`: Video advertisements
+- `native`: Native content ads
+- `audio`: Audio/podcast ads
+
+### Position Types
+- `above_fold`: Visible without scrolling
+- `below_fold`: Requires scrolling to view
+
+### Auction Types
+- `first_price`: Winner pays their bid
+- `second_price`: Winner pays second-highest bid
+- `vcg`: Vickrey-Clarke-Groves mechanism
+
+## Data Types
+
+| Field | Type | Range/Format | Required |
+|-------|------|--------------|----------|
+| request_id | UUID | RFC 4122 | Yes |
+| timestamp | DateTime | ISO 8601 | Yes |
+| behavior_score | Float | 0.0 - 1.0 | Yes |
+| viewability_score | Float | 0.0 - 1.0 | Yes |
+| conversion_probability | Float | 0.0 - 1.0 | Yes |
+| floor_price | Float | > 0.0 | Yes |
+| estimated_value | Float | > 0.0 | Yes |
+| competition_level | Integer | >= 0 | Yes |
+
+## CSV Export Format
+
+Results can be exported to CSV with the following columns:
+
+```csv
+request_id,timestamp,strategy,bid,won,price,converted,revenue,competitors,device,position
+550e8400-e29b-41d4-a716-446655440000,2024-02-22T10:30:00Z,dynamic,3.50,true,3.25,false,0.00,5,mobile,above_fold
 ```
 
-3. **View analytics notebooks**
-```bash
-jupyter notebook notebooks/
+## Database Schema (Future)
+
+For production deployment with PostgreSQL:
+
+```sql
+CREATE TABLE bid_requests (
+    request_id UUID PRIMARY KEY,
+    timestamp TIMESTAMPTZ NOT NULL,
+    user_id VARCHAR(100),
+    device_type VARCHAR(20),
+    ad_format VARCHAR(20),
+    floor_price DECIMAL(10, 2),
+    conversion_prob DECIMAL(5, 4),
+    estimated_value DECIMAL(10, 2)
+);
+
+CREATE TABLE auction_results (
+    result_id SERIAL PRIMARY KEY,
+    request_id UUID REFERENCES bid_requests(request_id),
+    strategy_name VARCHAR(50),
+    bid DECIMAL(10, 2),
+    won BOOLEAN,
+    winning_price DECIMAL(10, 2),
+    converted BOOLEAN,
+    revenue DECIMAL(10, 2),
+    timestamp TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_results_strategy ON auction_results(strategy_name);
+CREATE INDEX idx_results_timestamp ON auction_results(timestamp);
+CREATE INDEX idx_requests_timestamp ON bid_requests(timestamp);
 ```
-
-## 💡 Usage Examples
-
-### Run Auction Simulation
-```python
-from simulation.auction import AuctionSimulator
-from strategies.dynamic import DynamicBidStrategy
-
-# Initialize simulator
-simulator = AuctionSimulator(
-    num_auctions=10000,
-    avg_competition=5,
-    market_volatility=0.2
-)
-
-# Create strategy
-strategy = DynamicBidStrategy(
-    base_bid=2.50,
-    max_bid=10.00,
-    target_cpa=15.00
-)
-
-# Run simulation
-results = simulator.run(strategy)
-print(f"Win Rate: {results['win_rate']:.2%}")
-print(f"Average CPA: ${results['avg_cpa']:.2f}")
-print(f"ROAS: {results['roas']:.2f}x")
-```
-
-### Optimize Budget Allocation
-```python
-from analytics.optimizer import BudgetOptimizer
-
-optimizer = BudgetOptimizer()
-allocation = optimizer.optimize(
-    campaigns=[
-        {'id': 'campaign_1', 'current_cpa': 12.50, 'conversion_rate': 0.03},
-        {'id': 'campaign_2', 'current_cpa': 18.00, 'conversion_rate': 0.02},
-    ],
-    total_budget=50000
-)
-```
-
-### Compare Strategies
-```python
-from analytics.performance import StrategyComparator
-
-comparator = StrategyComparator()
-comparison = comparator.compare(
-    strategies=['fixed', 'dynamic', 'ml'],
-    metrics=['win_rate', 'cpa', 'roas']
-)
-comparator.plot_comparison()
-```
-
-## 📊 Key Metrics & Algorithms
-
-### Performance Metrics
-- **Win Rate**: Percentage of auctions won
-- **Cost Per Acquisition (CPA)**: Average cost per conversion
-- **Return on Ad Spend (ROAS)**: Revenue / Ad Spend
-- **Impression Quality Score**: Value-based impression ranking
-- **Budget Utilization**: Efficient spend pacing
-
-### Optimization Algorithms
-- **Monte Carlo Simulation**: Auction outcome modeling
-- **Gradient Boosting**: ML-based bid prediction
-- **Linear Programming**: Budget allocation optimization
-- **Thompson Sampling**: Multi-armed bandit for strategy selection
-- **Statistical Testing**: A/B test significance analysis
-
-## 🔬 Technical Highlights
-
-### Data Science Components
-- Feature engineering for bid prediction (time, device, geography, user segments)
-- Win rate curve fitting and analysis
-- Conversion probability modeling
-- Anomaly detection for bid landscape changes
-- Time-series forecasting for budget pacing
-
-### Engineering Best Practices
-- Modular, extensible architecture
-- Comprehensive unit and integration tests
-- Type hints and documentation
-- CI/CD pipeline ready
-- Scalable data processing
-
-## 📈 Results & Impact
-
-Based on simulation with 100K auctions across multiple strategies:
-
-| Metric | Fixed Bid | Dynamic Bid | ML Strategy | Improvement |
-|--------|-----------|-------------|-------------|-------------|
-| Win Rate | 42.3% | 48.7% | 53.1% | **+25.5%** |
-| Avg CPA | $18.50 | $15.20 | $13.80 | **-25.4%** |
-| ROAS | 3.2x | 4.1x | 4.7x | **+46.9%** |
-| Budget Waste | 22% | 12% | 8% | **-63.6%** |
-
-**Projected Annual Savings**: For an advertiser spending $10M/year, this optimization could save **$1.4M-$2.2M** while maintaining or improving performance.
-
-## 🛣️ Roadmap
-
-- [ ] Real-time bidding API integration
-- [ ] Advanced ML models (deep learning, reinforcement learning)
-- [ ] Multi-objective optimization (CPA + brand safety + viewability)
-- [ ] Creative performance prediction
-- [ ] Fraud detection module
-- [ ] Attribution modeling
-- [ ] Integration with major DSPs (Google DV360, The Trade Desk)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by real-world programmatic advertising challenges
-- Built with best practices from leading AdTech companies
-- Dataset patterns based on industry research and benchmarks
-
-## 📧 Contact
-
-**Your Name** - [your.email@example.com](mailto:your.email@example.com)
-
-Project Link: [https://github.com/yourusername/rtb-optimizer](https://github.com/yourusername/rtb-optimizer)
-
----
-
-**Note**: This is a simulation platform for educational and analytical purposes. Results are modeled and may not reflect exact real-world performance. Always validate with real campaign data.
