@@ -277,7 +277,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Isha Mukherjee** - [ishamukherjee123@gmail.com](mailto:ishamukherjee123@gmail.com)
 
-Project Link: [https://github.com/yourusername/rtb-optimizer](https://github.com/ishamukherjee123/rtb-optimizer)
+Project Link: [https://github.com/ishamukherjee123/rtb-optimizer](https://github.com/ishamukherjee123/rtb-optimizer)
 
 ---
 
