@@ -10,7 +10,7 @@ The RTB Optimizer is designed as a modular, scalable platform for simulating and
 ┌─────────────────────────────────────────────────────────────────┐
 │                     Presentation Layer                          │
 │  ┌──────────────────────────────────────────────────────────┐  │
-│  │           React Dashboard (dashboard/)                    │  │
+│  │                 Dashboard (dashboard/)                    │  │
 │  │  • Real-time auction visualization                        │  │
 │  │  • Performance metrics display                            │  │
 │  │  • Strategy comparison charts                             │  │
@@ -116,12 +116,6 @@ The RTB Optimizer is designed as a modular, scalable platform for simulating and
 ### 4. Presentation Layer
 
 **Purpose**: Interactive dashboard for visualization and control.
-
-**Technology Stack**:
-- React 18 for UI components
-- Recharts for data visualization
-- Framer Motion for animations
-- Modern CSS with gradients and blur effects
 
 **Features**:
 - Real-time auction stream
